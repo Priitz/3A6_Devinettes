@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+
+"""
+Jeu de devinettes.
+
+Par Jeremy Lalonde
+"""
 import random
 
 MAX_ESSAIS = 10
@@ -9,14 +15,11 @@ nbEssais = 1
 nbPartie = 0
 nbEssaisTotal = 0
 
-"""
-Jeu de devinettes.
-
-Par Jeremy Lalonde
-"""
-
 
 def main():
+    """
+    Fonction qui apelle jeu, pour démarer la devinette
+    """
 
     print("""Bonjour, je m'apelle Jeremy 2020
 J'ai choisi un nombre entier entre 1 et 100
@@ -25,6 +28,10 @@ Pouvez-vous le deviner?""")
 
 
 def jeu():
+    """
+    On traite l'entrée du l'utilisateur pour s'assurer que tout est bon, et on recommence juste a temps qu'il aille
+    la bonne réponse
+    """
     nombre = random.randint(1, MAX_RANGE)
     sequence = []
     global nbEssais
@@ -72,7 +79,11 @@ def jeu():
                 else:
                     print("Erreur : Entrez un nombre entier svp")
 
+
 def rejouer():
+    """
+    Fonction appeler a chaque fin de partie pour rejouer si désirer
+    """
     global nbPartie
     reponse = input("Voulez-vous rejouer? [O/N] ")
     print()
@@ -88,6 +99,7 @@ def rejouer():
     else:
         print("Choix invalide")
         rejouer()
+
 
 if __name__ == '__main__':
     main()
